@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#type --help to learn what this script does!
+
 htmlPage() {
 cat << EOF >> index.html
 <!DOCTYPE html>
@@ -35,6 +37,7 @@ if [ "$1" = "-v" -o "$1" = "--version" ]; then
 #---About & Help---#
 elif [ "$1" = "-h" -o "$1" = "--help" ]; then
 	echo "About Section";
+	echo "This little script creates a web directory and fills it with an HTML, CSS, and Javascript file. The CSS and Javascript files have been linked to the HTML file for you, saving you an extra bit of time when starting a new website project! To start using this script, type -c YOURFILENAME to create a new project. Type --jquery after YOURFILENAME if you'd like the Jquery CDN added to the HTML file."
 
 #---Create the html, css, and js project---#
 elif [ "$1" = "-c"  -o "$1" = "--create" ]; then
@@ -50,5 +53,5 @@ elif [ "$1" = "-c"  -o "$1" = "--create" ]; then
 		echo "Web project: $2, has been created at $dir."
 	fi
 else
-	echo "Command Not Found. If you need help, type '--help'" 
+	echo "Command Not Found. If you need help, type '--help'"
 fi
